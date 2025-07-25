@@ -29,5 +29,6 @@ jobs:
               ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
               "cd ${{ secrets.PROJECT_DIR }} && \
                git pull origin main && \
-               docker-compose -f deploy/docker-compose/docker-compose.yaml up --build -d && \
+               docker-compose -f deploy/docker-compose/docker-compose.yaml build --pull && \
+               docker-compose -f deploy/docker-compose/docker-compose.yaml up -d && \
                docker system prune -f"
