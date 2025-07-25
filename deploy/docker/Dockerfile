@@ -1,4 +1,5 @@
-FROM centos:7
+# 使用预构建的基础镜像
+FROM base-alpine:3.22-tz
 WORKDIR /opt
 ENV LANG=en_US.utf8
 COPY deploy/docker/entrypoint.sh .
